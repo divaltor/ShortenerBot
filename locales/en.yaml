@@ -1,0 +1,4 @@
+start: 'Send a link e.g. https://example.com'
+short: 'Short link'
+switch: 'Switch to another chat'
+error: 'I dont understand you'
