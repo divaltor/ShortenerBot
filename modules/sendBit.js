@@ -1,23 +1,19 @@
-const request = require('request-promise-native');
-const API_BIT = process.env.API_BIT;
-const GUID = process.env.GUID;
-
-const API_URL = 'https://api-ssl.bitly.com/v4/shorten';
+const axios = require('axios');
 
 const headers = {
-    'Authorization': `Bearer ${API_BIT}`,
+    'Authorization': `Bearer ${process.env.API_BIT}`,
     'Host': 'api-ssl.bitly.com',
     'Content-Type': 'application/json'
 };
 
-module.exports = (url) => {
-    return request({
+module.exports = async (url) => {
+    return axios({
         method: 'POST',
-        uri: API_URL,
+        uri: process.env.API_URL,
         headers: headers,
         json: {
             'long_url': url,
-            'group_guid': GUID
+            'group_guid': process.env.GUID
         }
     })
 
