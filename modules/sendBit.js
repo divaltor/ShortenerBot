@@ -7,14 +7,14 @@ const headers = {
 };
 
 module.exports = async (url) => {
-    return axios({
-        method: 'POST',
-        uri: process.env.API_URL,
-        headers: headers,
-        json: {
-            'long_url': url,
-            'group_guid': process.env.GUID
+    return axios.post(
+        'https://api-ssl.bitly.com/v4/shorten',
+        {
+            long_url: url
+        },
+        {
+            headers: headers
         }
-    })
+    );
 
 };

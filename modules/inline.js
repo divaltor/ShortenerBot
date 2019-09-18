@@ -1,11 +1,11 @@
-module.exports = ({ i18n }, url) => {
+module.exports = (url) => {
     return [{
         "type": "article",
         "id": 5,
-        "title": `${i18n.t('short')}: ${url}`,
-        "description": `${i18n.t('short')}`,
+        "title": `Короткая ссылка: ${url}`,
+        "description": 'Короткая ссылка',
         "input_message_content": {
-            "message_text": `${i18n.t('short')}: ${url}`,
+            "message_text": `Короткая ссылка: ${url}`,
             "parse_mode": 'Markdown',
             "disable_web_page_preview": true
         }
